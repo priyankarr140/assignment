@@ -1,0 +1,97 @@
+<!Doctype html>
+<html>
+<head>
+	<title> Assignment
+	</title>
+	<script src="javascript/styles.js">
+	</script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">google.load("feeds", "1");
+	function initialize() {
+        
+      var feed = new google.feeds.Feed("http://fastpshb.appspot.com/feed/1/fastpshb");
+      feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("feed");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            var div = document.createElement("div");
+            div.appendChild(document.createTextNode(entry.title));
+            container.appendChild(div);
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);</script>
+	<style>
+    .letter {
+        position: relative;
+        top: -webkit-calc(50% - 60px);
+        top: calc(50% - 60px);
+        text-shadow: 0px 0px 3px white;
+    }
+    .letter:nth-child(1) {
+        -webkit-animation: fade 4s infinite 200ms;
+        animation: fade 4s infinite 200ms;
+    }
+    .letter:nth-child(2) {
+        -webkit-animation: fade 4s infinite 400ms;
+        animation: fade 4s infinite 400ms;
+    }
+    .letter:nth-child(3) {
+        -webkit-animation: fade 4s infinite 600ms;
+        animation: fade 4s infinite 600ms;
+    }
+    .letter:nth-child(4) {
+        -webkit-animation: fade 4s infinite 800ms;
+        animation: fade 4s infinite 800ms;
+    }
+    .letter:nth-child(5) {
+        -webkit-animation: fade 4s infinite 1000ms;
+        animation: fade 4s infinite 1000ms;
+    }
+    .letter:nth-child(6) {
+        -webkit-animation: fade 4s infinite 1200ms;
+        animation: fade 4s infinite 1200ms;
+    }
+    .letter:nth-child(7) {
+        -webkit-animation: fade 4s infinite 1400ms;
+        animation: fade 4s infinite 1400ms;
+    }
+
+    @-webkit-keyframes fade {
+        50% {
+            opacity: 0.02;
+        }
+    }
+
+    @keyframes fade {
+        50% {
+            opacity: 0.02;
+        }
+    }
+</style>
+</head>
+<body style="background-color:#000000;color:#ff0000;" onload="startTime(),date()">
+	<div id="txt">
+	</div>
+	<p id="demo">
+	</p>
+	<br><br><br><br><br>
+	<a class="weatherwidget-io" href="https://forecast7.com/en/28d6677d23/delhi/" data-label_1="DELHI" data-label_2="WEATHER" data-theme="original" >DELHI WEATHER</a><br><br><br><br><br>
+	
+	<span class='letter'>L</span>
+<span class='letter'>O</span>
+<span class='letter'>A</span>
+<span class='letter'>D</span>
+<span class='letter'>I</span>
+<span class='letter'>N</span>
+<span class='letter'>G</span>
+<br><br><br><br>
+<div id="feed"></div>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+
+  </body>
+</html>
